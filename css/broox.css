@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body { 
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: 0 auto;
+  min-height: 100%;
+  height: auto !important;
+  margin: 0 auto -420px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.content {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+body {
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.3;
+  color: #333;
+}
+
+.push { 
+  height: 420px; 
+}
+
+.bio {
+  margin: 10px auto;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+.logo { 
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.logo img {
+  width: 260px;
+  height: 111px;
+}
+
+footer.derek { 
+  height: 420px;
+  background: #fff url('../images/broox-derek-brooks.jpeg') no-repeat center bottom;
+  background-size: 318px 400px;
+}
+
+a { 
+  color: #06C;
+  text-decoration: none;
+}
+
+a:hover { 
+  color: #06C;
+}
+
+@media (min-width: 768px) {
+  .container {
+      margin: 0 auto -820px;
+      width: 750px;
+  }
+  
+  .push {
+      height: 820px;
+  }
+  
+  footer.derek {
+      background-size: 636px 800px;
+      height: 820px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+      width: 970px;
+  }
+
+  .content {
+    width: 66.66667%;
+    margin-left: 16.66667%;
+}
+}
+
+@media (min-width: 1200px) {
+  .container {
+      width: 1170px;
+  }
+}
