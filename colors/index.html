@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Colors – Derek Brooks</title>
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+    <meta name="description" content="Derek's House of Colour Mid Summer palette, sorted by rating.">
+    <meta name="author" content="Derek Brooks">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Colors">
+
+    <link href="./colors.css?2026-11-07" rel="stylesheet">
+    <link rel="canonical" href="https://broox.com/colors/">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  </head>
+  <body>
+    <header class="intro">
+      <h1>Mid Summer</h1>
+      <p>House of Colour · tap a colour for full screen</p>
+      <button type="button" class="check-btn" id="white-check">White check</button>
+    </header>
+
+    <aside class="display-tip" id="display-tip" hidden>
+      <p><strong>For true colours, check your screen first.</strong> A web page can't see or undo
+        Night&nbsp;Shift, True&nbsp;Tone or colour filters, and they all tint colours warm.</p>
+      <ul>
+        <li><b>Night Shift</b> &amp; <b>True Tone</b>: Control Centre → long-press brightness, toggle both off.</li>
+        <li><b>Brightness</b>: turn it up; dim screens mute colours.</li>
+        <li>Also check Settings → Accessibility → Display &amp; Text Size: <b>Colour Filters</b> and <b>Reduce White Point</b> should be off.</li>
+      </ul>
+      <p>Not sure? Tap <b>White check</b>. It should look pure white, not cream or orange.</p>
+      <button type="button" id="tip-dismiss">Got it</button>
+    </aside>
+
+    <main id="swatches" class="swatches" aria-label="Colour swatches"></main>
+
+    <footer class="outro">
+      <p>Colours were sampled from a photo of my physical House of Colour swatch and colour-corrected,
+        so they're close, not certified. On wide-gamut screens they're shown in Display&nbsp;P3.</p>
+      <p><a href="/">broox.com</a></p>
+    </footer>
+
+    <div class="fullscreen" id="fullscreen" role="dialog" aria-modal="true" aria-label="Full screen colour" hidden>
+      <div class="fs-label" id="fs-label"></div>
+    </div>
+
+    <script src="./palette.js?2026-11-07"></script>
+    <script src="./colors.js?2026-11-07"></script>
+  </body>
+</html>
