@@ -2,7 +2,7 @@
   'use strict';
 
   var GROUPS = [
-    { rating: 3, title: '★★★ Wow', blurb: 'power colours, head to toe' },
+    { rating: 3, title: '★★★ Wow', blurb: 'power colors, head to toe' },
     { rating: 2, title: '★★ Excellent', blurb: 'strong choices' },
     { rating: 1, title: '★ Significant', blurb: 'pops, patterns & accessories' }
   ];
@@ -24,11 +24,11 @@
   var useP3 = !!(window.CSS && CSS.supports && CSS.supports('color', 'color(display-p3 1 0 0)')) &&
     !!(window.matchMedia && matchMedia('(color-gamut: p3)').matches);
 
-  function cssColor(c) {
+  function photoColor(c) {
     return useP3 ? 'color(display-p3 ' + c.p3 + ')' : c.hex;
   }
 
-  // Black or white text, whichever has more contrast against the colour.
+  // Black or white text, whichever has more contrast against the color.
   function inkFor(hex) {
     var n = parseInt(hex.slice(1), 16);
     var lum = [n >> 16, (n >> 8) & 255, n & 255].map(function (v) {
@@ -39,8 +39,18 @@
     return (L + 0.05) / 0.05 > 1.05 / (L + 0.05) ? 'rgba(0,0,0,0.82)' : 'rgba(255,255,255,0.92)';
   }
 
+  function paintHalf(node, hex, css) {
+    node.style.background = hex;
+    if (css && css !== hex) node.style.background = css;
+    node.style.setProperty('--ink', inkFor(hex));
+  }
+
   function stars(n) {
     return '★★★'.slice(0, n);
+  }
+
+  function noteText(c) {
+    return c.note ? (NOTES[c.note] || c.note) : '';
   }
 
   function el(tag, cls, text) {
@@ -50,61 +60,90 @@
     return e;
   }
 
-  // --- Build the list, sorted by rating, then by swatch number ---------------
+  // --- Build the list: by rating, tagged colors first, then by swatch number ---
   var ordered = [];
   var root = document.getElementById('swatches');
 
   GROUPS.forEach(function (g) {
-    var colours = window.PALETTE.filter(function (c) { return c.rating === g.rating; })
-      .sort(function (a, b) { return a.n - b.n; });
-    if (!colours.length) return;
+    var colors = window.PALETTE.filter(function (c) { return c.rating === g.rating; })
+      .sort(function (a, b) { return (b.note ? 1 : 0) - (a.note ? 1 : 0) || a.n - b.n; });
+    if (!colors.length) return;
 
     var h = el('h2', 'group-heading', g.title + ' ');
     h.appendChild(el('span', null, '· ' + g.blurb));
     root.appendChild(h);
 
-    colours.forEach(function (c) {
+    colors.forEach(function (c) {
       var idx = ordered.push(c) - 1;
       var b = el('button', 'swatch');
       b.type = 'button';
-      b.style.background = c.hex;
-      b.style.background = cssColor(c);
-      b.style.setProperty('--ink', inkFor(c.hex));
 
-      var name = el('span', 'swatch-name', c.name);
-      if (c.note) name.appendChild(el('span', 'badge', NOTES[c.note] || c.note));
-      b.appendChild(name);
+      // Left: photo of the swatch.
+      var left = el('span', 'half photo-half');
+      paintHalf(left, c.hex, photoColor(c));
+      left.appendChild(el('span', 'swatch-name', c.name));
+      if (c.note) left.appendChild(el('span', 'badge', noteText(c)));
+      left.appendChild(el('span', 'swatch-meta', stars(c.rating) + '  ·  #' + c.n));
+      left.appendChild(el('span', 'swatch-hex', 'Photo ' + c.hex + (c.estimated ? ' (est.)' : '')));
+      b.appendChild(left);
 
-      var meta = stars(c.rating) + '  ·  #' + c.n + '  ·  ' + c.hex;
-      if (c.estimated) meta += '  ·  estimated';
-      b.appendChild(el('span', 'swatch-meta', meta));
+      // Right: House of Colour wheel graphic.
+      var right = el('span', 'half wheel-half');
+      if (c.wheel) {
+        paintHalf(right, c.wheel);
+        right.appendChild(el('span', 'swatch-hex', 'Wheel ' + c.wheel));
+      } else {
+        right.classList.add('missing');
+        right.appendChild(el('span', 'swatch-hex', 'Not on the wheel'));
+      }
+      b.appendChild(right);
 
-      b.setAttribute('aria-label', c.name + ', ' + c.rating + ' stars' + (c.note ? ', ' + (NOTES[c.note] || c.note) : ''));
+      b.setAttribute('aria-label', c.name + ', ' + c.rating + ' stars' + (c.note ? ', ' + noteText(c) : '') +
+        '. Photo ' + c.hex + (c.wheel ? ', wheel ' + c.wheel : ', not on the wheel'));
       b.addEventListener('click', function () { open(idx); });
       root.appendChild(b);
     });
   });
 
-  // --- Full screen -------------------------------------------------------------
+  // --- Full screen (split the same way) -----------------------------------------
   var fs = document.getElementById('fullscreen');
-  var fsLabel = document.getElementById('fs-label');
+  var fsLeft = document.getElementById('fs-left');
+  var fsRight = document.getElementById('fs-right');
   var themeMeta = document.querySelector('meta[name="theme-color"]');
   var current = null; // index into ordered, or 'white'
   var lastFocus = null;
 
+  function setLabel(half, title, line) {
+    var label = half.querySelector('.fs-label');
+    label.textContent = '';
+    label.appendChild(el('strong', null, title));
+    label.appendChild(el('span', null, line));
+  }
+
   function paint(c) {
-    fs.style.background = c.hex;
-    fs.style.background = cssColor(c);
-    fs.style.setProperty('--ink', inkFor(c.hex));
-    // Tint the browser chrome and overscroll area to match, so the whole screen is the colour.
+    var single = c === WHITE_CHECK;
+    fs.classList.toggle('single', single);
+    paintHalf(fsLeft, c.hex, photoColor(c));
+    // Tint the browser chrome and overscroll area to match.
     themeMeta.setAttribute('content', c.hex);
     document.documentElement.style.background = c.hex;
 
-    fsLabel.textContent = '';
-    fsLabel.appendChild(el('strong', null, c.name));
-    fsLabel.appendChild(el('span', null, c.caption ||
-      (stars(c.rating) + '  ·  ' + c.hex + (c.note ? '  ·  ' + (NOTES[c.note] || c.note) : '') +
-       '  ·  ' + (current + 1) + '/' + ordered.length)));
+    if (single) {
+      setLabel(fsLeft, c.name, c.caption);
+      return;
+    }
+    var pos = (current + 1) + '/' + ordered.length;
+    setLabel(fsLeft, c.name, 'Photo ' + c.hex + '  ·  ' + stars(c.rating) + (c.note ? '  ·  ' + noteText(c) : ''));
+    fsRight.classList.toggle('missing', !c.wheel);
+    if (c.wheel) {
+      paintHalf(fsRight, c.wheel);
+      setLabel(fsRight, 'Wheel', c.wheel + '  ·  ' + pos);
+    } else {
+      fsRight.style.background = '';
+      fsRight.style.setProperty('--ink', '#777');
+      fsRight.style.background = 'repeating-linear-gradient(45deg, #eee 0 10px, #f8f8f8 10px 20px)';
+      setLabel(fsRight, 'Wheel', 'Not on the wheel  ·  ' + pos);
+    }
   }
 
   function open(which) {
@@ -117,7 +156,7 @@
       document.body.classList.add('locked');
       fs.tabIndex = -1;
       fs.focus();
-      // Let the phone's back gesture close the colour instead of leaving the page.
+      // Let the phone's back gesture close the color instead of leaving the page.
       try { history.pushState({ colorsFullscreen: true }, ''); } catch (e) {}
     }
   }
@@ -142,7 +181,7 @@
 
   window.addEventListener('popstate', function () { close(true); });
 
-  // Tap to close, swipe left/right for the next/previous colour.
+  // Tap to close, swipe left/right for the next/previous color.
   var startX = 0, startY = 0, tracking = false;
   fs.addEventListener('pointerdown', function (e) {
     tracking = true; startX = e.clientX; startY = e.clientY;

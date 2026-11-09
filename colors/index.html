@@ -17,7 +17,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Colors">
 
-    <link href="./colors.css?2026-11-07" rel="stylesheet">
+    <link href="./colors.css?2026-11-09" rel="stylesheet">
     <link rel="canonical" href="https://broox.com/colors/">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -26,36 +26,45 @@
   </head>
   <body>
     <header class="intro">
-      <h1>Mid Summer</h1>
-      <p>House of Colour · tap a colour for full screen</p>
+      <img class="wheel" src="./house-of-colour-wheel.png" width="674" height="674"
+           alt="House of Colour seasonal color wheel: Autumn, Spring, Winter and Summer">
+      <div class="intro-text">
+        <h1>Mid Summer</h1>
+        <p class="season">Summer colors are: soft, blue, smokey, and rose</p>
+        <p>House of Colour · tap a color for full screen</p>
+      </div>
       <button type="button" class="check-btn" id="white-check">White check</button>
     </header>
 
     <aside class="display-tip" id="display-tip" hidden>
-      <p><strong>For true colours, check your screen first.</strong> A web page can't see or undo
-        Night&nbsp;Shift, True&nbsp;Tone or colour filters, and they all tint colours warm.</p>
+      <p><strong>For true colors, check your screen first.</strong> A web page can't see or undo
+        Night&nbsp;Shift, True&nbsp;Tone or color filters, and they all tint colors warm.</p>
       <ul>
-        <li><b>Night Shift</b> &amp; <b>True Tone</b>: Control Centre → long-press brightness, toggle both off.</li>
-        <li><b>Brightness</b>: turn it up; dim screens mute colours.</li>
-        <li>Also check Settings → Accessibility → Display &amp; Text Size: <b>Colour Filters</b> and <b>Reduce White Point</b> should be off.</li>
+        <li><b>Night Shift</b> &amp; <b>True Tone</b>: Control Center → long-press brightness, toggle both off.</li>
+        <li><b>Brightness</b>: turn it up; dim screens mute colors.</li>
+        <li>Also check Settings → Accessibility → Display &amp; Text Size: <b>Color Filters</b> and <b>Reduce White Point</b> should be off.</li>
       </ul>
       <p>Not sure? Tap <b>White check</b>. It should look pure white, not cream or orange.</p>
       <button type="button" id="tip-dismiss">Got it</button>
     </aside>
 
-    <main id="swatches" class="swatches" aria-label="Colour swatches"></main>
+    <p class="legend"><span>Left: from a photo of my swatch</span><span>Right: from the House of Colour wheel</span></p>
+
+    <main id="swatches" class="swatches" aria-label="Color swatches"></main>
 
     <footer class="outro">
-      <p>Colours were sampled from a photo of my physical House of Colour swatch and colour-corrected,
-        so they're close, not certified. On wide-gamut screens they're shown in Display&nbsp;P3.</p>
+      <p>Left halves were sampled from a photo of my physical House of Colour swatch and color-corrected
+        (shown in Display&nbsp;P3 on wide-gamut screens). Right halves were picked from House of Colour's
+        color wheel graphic. Neither is certified; they're here side by side to compare.</p>
       <p><a href="/">broox.com</a></p>
     </footer>
 
-    <div class="fullscreen" id="fullscreen" role="dialog" aria-modal="true" aria-label="Full screen colour" hidden>
-      <div class="fs-label" id="fs-label"></div>
+    <div class="fullscreen" id="fullscreen" role="dialog" aria-modal="true" aria-label="Full screen color" hidden>
+      <div class="fs-half" id="fs-left"><div class="fs-label"></div></div>
+      <div class="fs-half" id="fs-right"><div class="fs-label"></div></div>
     </div>
 
-    <script src="./palette.js?2026-11-07"></script>
-    <script src="./colors.js?2026-11-07"></script>
+    <script src="./palette.js?2026-11-09"></script>
+    <script src="./colors.js?2026-11-09"></script>
   </body>
 </html>
