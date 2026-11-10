@@ -1,0 +1,18 @@
+# Photos stay out of git (large); commit shots.json and the report/measurements instead.
+*.arw
+*.ARW
+*.cr2
+*.CR2
+*.cr3
+*.CR3
+*.nef
+*.NEF
+*.dng
+*.DNG
+*.tif
+*.tiff
+*.TIF
+*.TIFF
+*.preview.jpg
+*.annotated.jpg
+__pycache__/
