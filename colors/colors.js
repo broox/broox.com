@@ -78,13 +78,13 @@
       var b = el('button', 'swatch');
       b.type = 'button';
 
-      // Left: photo of the swatch.
+      // Left: measured from the swatch.
       var left = el('span', 'half photo-half');
       paintHalf(left, c.hex, photoColor(c));
       left.appendChild(el('span', 'swatch-name', c.name));
       if (c.note) left.appendChild(el('span', 'badge', noteText(c)));
       left.appendChild(el('span', 'swatch-meta', stars(c.rating) + '  ·  #' + c.n));
-      left.appendChild(el('span', 'swatch-hex', 'Photo ' + c.hex + (c.estimated ? ' (est.)' : '')));
+      left.appendChild(el('span', 'swatch-hex', 'Measured ' + c.hex));
       b.appendChild(left);
 
       // Right: House of Colour wheel graphic.
@@ -99,7 +99,7 @@
       b.appendChild(right);
 
       b.setAttribute('aria-label', c.name + ', ' + c.rating + ' stars' + (c.note ? ', ' + noteText(c) : '') +
-        '. Photo ' + c.hex + (c.wheel ? ', wheel ' + c.wheel : ', not on the wheel'));
+        '. Measured ' + c.hex + (c.wheel ? ', wheel ' + c.wheel : ', not on the wheel'));
       b.addEventListener('click', function () { open(idx); });
       root.appendChild(b);
     });
@@ -133,7 +133,7 @@
       return;
     }
     var pos = (current + 1) + '/' + ordered.length;
-    setLabel(fsLeft, c.name, 'Photo ' + c.hex + '  ·  ' + stars(c.rating) + (c.note ? '  ·  ' + noteText(c) : ''));
+    setLabel(fsLeft, c.name, 'Measured ' + c.hex + '  ·  ' + stars(c.rating) + (c.note ? '  ·  ' + noteText(c) : ''));
     fsRight.classList.toggle('missing', !c.wheel);
     if (c.wheel) {
       paintHalf(fsRight, c.wheel);

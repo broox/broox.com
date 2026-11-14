@@ -98,8 +98,10 @@ def apply_flat_field(img: np.ndarray, flat: np.ndarray) -> np.ndarray:
     sigma = max(lum.shape) / 60.0
     lum = cv2.GaussianBlur(lum, (0, 0), sigma)
     lum = lum / np.median(lum)
-    if lum.min() < 0.2:
-        print("  warning: flat-field has very dark areas; is the board filling the frame?", file=sys.stderr)
+    dark = float((lum < 0.2).mean())
+    if dark > 0:
+        print(f"  note: {dark:.0%} of the flat-field frame isn't covered by the board; "
+              "fine as long as the cards and checker are", file=sys.stderr)
     return img / np.clip(lum, 0.05, None)[..., None]
 
 
