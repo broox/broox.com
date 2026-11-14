@@ -53,10 +53,20 @@ METHODS = {
 
 def load_linear(path: Path, encoding: str = "linear", half_size: bool = True) -> np.ndarray:
     """Return a float32 HxWx3 image in linear camera (or file) RGB, roughly 0..1."""
+    if not path.is_file():
+        near = sorted(p.name for p in path.parent.glob("*") if p.suffix.lower() == path.suffix.lower())[:12] \
+            if path.parent.is_dir() else []
+        raise SystemExit(f"File not found: {path}" + (f"\n  files in {path.parent}/: {', '.join(near)}" if near else ""))
+    if path.stat().st_size == 0:
+        raise SystemExit(f"{path} is empty (0 bytes). If it's in iCloud/Dropbox, make sure it's downloaded.")
     if path.suffix.lower() in RAW_EXTENSIONS:
         import rawpy
 
-        with rawpy.imread(str(path)) as raw:
+        try:
+            raw_ctx = rawpy.imread(str(path))
+        except (rawpy.LibRawIOError, rawpy.LibRawFileUnsupportedError) as e:
+            raise SystemExit(f"LibRaw couldn't read {path}: {e}. Is it a complete, readable RAW file?")
+        with raw_ctx as raw:
             rgb = raw.postprocess(
                 half_size=half_size,          # 2x2 superpixels: no demosaicing artifacts
                 gamma=(1, 1),                 # linear

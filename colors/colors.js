@@ -78,37 +78,22 @@
       var b = el('button', 'swatch');
       b.type = 'button';
 
-      // Left: measured from the swatch.
-      var left = el('span', 'half photo-half');
-      paintHalf(left, c.hex, photoColor(c));
-      left.appendChild(el('span', 'swatch-name', c.name));
-      if (c.note) left.appendChild(el('span', 'badge', noteText(c)));
-      left.appendChild(el('span', 'swatch-meta', stars(c.rating) + '  ·  #' + c.n));
-      left.appendChild(el('span', 'swatch-hex', 'Measured ' + c.hex));
-      b.appendChild(left);
+      var half = el('span', 'half');
+      paintHalf(half, c.hex, photoColor(c));
+      half.appendChild(el('span', 'swatch-name', c.name));
+      if (c.note) half.appendChild(el('span', 'badge', noteText(c)));
+      half.appendChild(el('span', 'swatch-meta', stars(c.rating) + '  ·  #' + c.n + '  ·  ' + c.hex));
+      b.appendChild(half);
 
-      // Right: House of Colour wheel graphic.
-      var right = el('span', 'half wheel-half');
-      if (c.wheel) {
-        paintHalf(right, c.wheel);
-        right.appendChild(el('span', 'swatch-hex', 'Wheel ' + c.wheel));
-      } else {
-        right.classList.add('missing');
-        right.appendChild(el('span', 'swatch-hex', 'Not on the wheel'));
-      }
-      b.appendChild(right);
-
-      b.setAttribute('aria-label', c.name + ', ' + c.rating + ' stars' + (c.note ? ', ' + noteText(c) : '') +
-        '. Measured ' + c.hex + (c.wheel ? ', wheel ' + c.wheel : ', not on the wheel'));
+      b.setAttribute('aria-label', c.name + ', ' + c.rating + ' stars' + (c.note ? ', ' + noteText(c) : '') + ', ' + c.hex);
       b.addEventListener('click', function () { open(idx); });
       root.appendChild(b);
     });
   });
 
-  // --- Full screen (split the same way) -----------------------------------------
+  // --- Full screen ---------------------------------------------------------------
   var fs = document.getElementById('fullscreen');
   var fsLeft = document.getElementById('fs-left');
-  var fsRight = document.getElementById('fs-right');
   var themeMeta = document.querySelector('meta[name="theme-color"]');
   var current = null; // index into ordered, or 'white'
   var lastFocus = null;
@@ -121,28 +106,15 @@
   }
 
   function paint(c) {
-    var single = c === WHITE_CHECK;
-    fs.classList.toggle('single', single);
     paintHalf(fsLeft, c.hex, photoColor(c));
     // Tint the browser chrome and overscroll area to match.
     themeMeta.setAttribute('content', c.hex);
     document.documentElement.style.background = c.hex;
-
-    if (single) {
+    if (c === WHITE_CHECK) {
       setLabel(fsLeft, c.name, c.caption);
-      return;
-    }
-    var pos = (current + 1) + '/' + ordered.length;
-    setLabel(fsLeft, c.name, 'Measured ' + c.hex + '  ·  ' + stars(c.rating) + (c.note ? '  ·  ' + noteText(c) : ''));
-    fsRight.classList.toggle('missing', !c.wheel);
-    if (c.wheel) {
-      paintHalf(fsRight, c.wheel);
-      setLabel(fsRight, 'Wheel', c.wheel + '  ·  ' + pos);
     } else {
-      fsRight.style.background = '';
-      fsRight.style.setProperty('--ink', '#777');
-      fsRight.style.background = 'repeating-linear-gradient(45deg, #eee 0 10px, #f8f8f8 10px 20px)';
-      setLabel(fsRight, 'Wheel', 'Not on the wheel  ·  ' + pos);
+      setLabel(fsLeft, c.name, c.hex + '  ·  ' + stars(c.rating) + (c.note ? '  ·  ' + noteText(c) : '') +
+        '  ·  ' + (current + 1) + '/' + ordered.length);
     }
   }
 
