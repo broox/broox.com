@@ -154,21 +154,24 @@
   window.addEventListener('popstate', function () { close(true); });
 
   // Tap to close, swipe left/right for the next/previous color.
-  var startX = 0, startY = 0, tracking = false;
+  // Close on `click`, not `pointerup`: hiding the overlay during pointerup lets the
+  // tap's follow-up click land on the swatch underneath and reopen it.
+  var startX = 0, startY = 0, tracking = false, moved = false;
   fs.addEventListener('pointerdown', function (e) {
-    tracking = true; startX = e.clientX; startY = e.clientY;
+    tracking = true; moved = false; startX = e.clientX; startY = e.clientY;
   });
   fs.addEventListener('pointerup', function (e) {
     if (!tracking) return;
     tracking = false;
     var dx = e.clientX - startX, dy = e.clientY - startY;
-    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
-      step(dx < 0 ? 1 : -1);
-    } else if (Math.abs(dx) < 10 && Math.abs(dy) < 10) {
-      close();
-    }
+    moved = Math.abs(dx) >= 10 || Math.abs(dy) >= 10;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) step(dx < 0 ? 1 : -1);
   });
-  fs.addEventListener('pointercancel', function () { tracking = false; });
+  fs.addEventListener('pointercancel', function () { tracking = false; moved = true; });
+  fs.addEventListener('click', function () {
+    if (moved) { moved = false; return; }
+    close();
+  });
 
   document.addEventListener('keydown', function (e) {
     if (current === null) return;
