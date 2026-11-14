@@ -1,0 +1,863 @@
+{
+ "method": "linear",
+ "checker_reference": "ColorChecker24 - After November 2014",
+ "shots": [
+  {
+   "photo": "DSC01846.ARW",
+   "patch_order": "C",
+   "checker_dE_mean": 1.189,
+   "checker_dE_max": 3.296,
+   "checker_dE_leave_one_out": 1.365
+  },
+  {
+   "photo": "DSC01847.ARW",
+   "patch_order": "C",
+   "checker_dE_mean": 1.183,
+   "checker_dE_max": 3.333,
+   "checker_dE_leave_one_out": 1.36
+  },
+  {
+   "photo": "DSC01848.ARW",
+   "patch_order": "C",
+   "checker_dE_mean": 1.185,
+   "checker_dE_max": 3.333,
+   "checker_dE_leave_one_out": 1.361
+  },
+  {
+   "photo": "DSC01849.ARW",
+   "patch_order": "C",
+   "checker_dE_mean": 1.186,
+   "checker_dE_max": 3.39,
+   "checker_dE_leave_one_out": 1.362
+  }
+ ],
+ "swatches": [
+  {
+   "n": 1,
+   "XYZ": [
+    0.69521,
+    0.71035,
+    0.66774
+   ],
+   "Lab": [
+    87.5,
+    4.37,
+    8.54
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.076,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.9078 0.8495 0.8035",
+   "hex": "#EBD8CB",
+   "name": "Pink Beige",
+   "dE_vs_current": 5.87,
+   "dE_vs_wheel": 6.12
+  },
+  {
+   "n": 2,
+   "XYZ": [
+    0.74061,
+    0.75225,
+    0.76897
+   ],
+   "Lab": [
+    89.5,
+    5.37,
+    3.8
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.054,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.9243 0.8702 0.8570",
+   "hex": "#EFDDDA",
+   "name": "Powder Pink",
+   "dE_vs_current": 6.8,
+   "dE_vs_wheel": 5.9
+  },
+  {
+   "n": 3,
+   "XYZ": [
+    0.23961,
+    0.22524,
+    0.19324
+   ],
+   "Lab": [
+    54.58,
+    11.64,
+    9.3
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.114,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.5925 0.4877 0.4570",
+   "hex": "#9C7B73",
+   "name": "Mushroom",
+   "dE_vs_current": 7.88,
+   "dE_vs_wheel": 8.73
+  },
+  {
+   "n": 4,
+   "XYZ": [
+    0.09431,
+    0.08494,
+    0.07441
+   ],
+   "Lab": [
+    34.99,
+    11.7,
+    6.15
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.263,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.3902 0.3000 0.2894",
+   "hex": "#684B49",
+   "name": "Rose Brown",
+   "dE_vs_current": 11.3,
+   "dE_vs_wheel": 6.03
+  },
+  {
+   "n": 5,
+   "XYZ": [
+    0.21348,
+    0.14033,
+    0.09274
+   ],
+   "Lab": [
+    44.28,
+    44.1,
+    15.94
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.143,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.6376 0.2984 0.3240",
+   "hex": "#AF4551",
+   "name": "Musk Pink",
+   "dE_vs_current": 8.41,
+   "dE_vs_wheel": 1.72
+  },
+  {
+   "n": 6,
+   "XYZ": [
+    0.52815,
+    0.50191,
+    0.46902
+   ],
+   "Lab": [
+    76.19,
+    13.71,
+    7.91
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.068,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.8326 0.7068 0.6869",
+   "hex": "#DBB3AE",
+   "name": "Dusty Pink",
+   "dE_vs_current": 5.06
+  },
+  {
+   "n": 7,
+   "XYZ": [
+    0.79686,
+    0.83819,
+    0.88471
+   ],
+   "Lab": [
+    93.37,
+    0.04,
+    1.96
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.056,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.9309 0.9248 0.9120",
+   "hex": "#EEECE8",
+   "name": "Soft White",
+   "dE_vs_current": 6.4,
+   "dE_vs_wheel": 4.6
+  },
+  {
+   "n": 8,
+   "XYZ": [
+    0.02797,
+    0.03055,
+    0.05723
+   ],
+   "Lab": [
+    20.26,
+    -1.94,
+    -12.39
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.286,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.1439 0.1964 0.2563",
+   "hex": "#213343",
+   "name": "French Navy",
+   "dE_vs_current": 10.62,
+   "dE_vs_wheel": 5.0
+  },
+  {
+   "n": 9,
+   "XYZ": [
+    0.12487,
+    0.13554,
+    0.19436
+   ],
+   "Lab": [
+    43.59,
+    -2.65,
+    -9.87
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.16,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.3605 0.4099 0.4615",
+   "hex": "#596977",
+   "name": "Dark Blue Grey",
+   "dE_vs_current": 5.79,
+   "dE_vs_wheel": 7.76
+  },
+  {
+   "n": 10,
+   "XYZ": [
+    0.28084,
+    0.30837,
+    0.41346
+   ],
+   "Lab": [
+    62.37,
+    -4.77,
+    -9.7
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.143,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.5337 0.6015 0.6517",
+   "hex": "#849AA8",
+   "name": "Light Blue Grey",
+   "dE_vs_current": 9.96,
+   "dE_vs_wheel": 6.2
+  },
+  {
+   "n": 11,
+   "XYZ": [
+    0.05502,
+    0.0594,
+    0.13245
+   ],
+   "Lab": [
+    29.26,
+    -1.68,
+    -21.05
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.178,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.1846 0.2766 0.3874",
+   "hex": "#284765",
+   "name": "Airforce Blue",
+   "dE_vs_current": 5.76,
+   "dE_vs_wheel": 3.64
+  },
+  {
+   "n": 12,
+   "XYZ": [
+    0.08991,
+    0.09155,
+    0.22623
+   ],
+   "Lab": [
+    36.28,
+    2.47,
+    -28.31
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.127,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.2422 0.3356 0.4986",
+   "hex": "#375683",
+   "name": "Delph",
+   "dE_vs_current": 5.12,
+   "dE_vs_wheel": 6.13
+  },
+  {
+   "n": 13,
+   "XYZ": [
+    0.72741,
+    0.79132,
+    0.61706
+   ],
+   "Lab": [
+    91.29,
+    -5.12,
+    19.49
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.073,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.9203 0.9093 0.7713",
+   "hex": "#EBE8C1",
+   "name": "Primrose",
+   "dE_vs_current": 3.62,
+   "dE_vs_wheel": 3.79
+  },
+  {
+   "n": 14,
+   "XYZ": [
+    0.48161,
+    0.51703,
+    0.75001
+   ],
+   "Lab": [
+    77.1,
+    -2.69,
+    -16.1
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.064,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.6780 0.7545 0.8519",
+   "hex": "#A8C1DC",
+   "name": "Powder Blue",
+   "dE_vs_current": 5.96,
+   "dE_vs_wheel": 8.28
+  },
+  {
+   "n": 15,
+   "XYZ": [
+    0.28817,
+    0.30838,
+    0.58168
+   ],
+   "Lab": [
+    62.37,
+    -1.9,
+    -27.15
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.075,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.4812 0.5998 0.7633",
+   "hex": "#729AC7",
+   "name": "Sky Blue",
+   "dE_vs_current": 3.95,
+   "dE_vs_wheel": 6.54
+  },
+  {
+   "n": 16,
+   "XYZ": [
+    0.13042,
+    0.13457,
+    0.41395
+   ],
+   "Lab": [
+    43.44,
+    1.67,
+    -42.39
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.157,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.2002 0.4084 0.6580",
+   "hex": "#186AAD",
+   "name": "Cornflower",
+   "dE_vs_current": 5.5,
+   "dE_vs_wheel": 7.98
+  },
+  {
+   "n": 17,
+   "XYZ": [
+    0.26924,
+    0.26199,
+    0.58486
+   ],
+   "Lab": [
+    58.23,
+    8.44,
+    -34.59
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.093,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.4752 0.5393 0.7670",
+   "hex": "#758AC8",
+   "name": "Hyacinth",
+   "dE_vs_current": 3.3,
+   "dE_vs_wheel": 3.78
+  },
+  {
+   "n": 18,
+   "XYZ": [
+    0.38825,
+    0.35795,
+    0.61612
+   ],
+   "Lab": [
+    66.36,
+    15.98,
+    -23.41
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.085,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.6550 0.6042 0.7835",
+   "hex": "#AA99CB",
+   "name": "Lavender",
+   "dE_vs_current": 5.85,
+   "dE_vs_wheel": 6.74
+  },
+  {
+   "n": 19,
+   "XYZ": [
+    0.06051,
+    0.07751,
+    0.15161
+   ],
+   "Lab": [
+    33.46,
+    -13.53,
+    -18.38
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.173,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.1412 0.3318 0.4119",
+   "hex": "#04566B",
+   "name": "Sea Green",
+   "dE_vs_current": 4.4,
+   "dE_vs_wheel": 7.54
+  },
+  {
+   "n": 20,
+   "XYZ": [
+    0.12681,
+    0.18439,
+    0.23252
+   ],
+   "Lab": [
+    50.02,
+    -29.09,
+    -5.7
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.169,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.2499 0.5120 0.4989",
+   "hex": "#1C8580",
+   "name": "Jade",
+   "dE_vs_current": 8.67,
+   "dE_vs_wheel": 9.02
+  },
+  {
+   "n": 21,
+   "XYZ": [
+    0.25338,
+    0.34978,
+    0.35015
+   ],
+   "Lab": [
+    65.73,
+    -30.49,
+    3.9
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.099,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.4430 0.6761 0.5991",
+   "hex": "#5DAE98",
+   "name": "Pastel Jade",
+   "dE_vs_current": 8.64,
+   "dE_vs_wheel": 7.59
+  },
+  {
+   "n": 22,
+   "XYZ": [
+    0.35213,
+    0.41695,
+    0.59825
+   ],
+   "Lab": [
+    70.66,
+    -14.43,
+    -14.38
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.081,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.5359 0.7063 0.7694",
+   "hex": "#7CB6C6",
+   "name": "Duck Egg",
+   "dE_vs_current": 8.3,
+   "dE_vs_wheel": 4.57
+  },
+  {
+   "n": 23,
+   "XYZ": [
+    0.55032,
+    0.60754,
+    0.79755
+   ],
+   "Lab": [
+    82.25,
+    -6.74,
+    -10.88
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.064,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.7255 0.8171 0.8738",
+   "hex": "#B3D1E1",
+   "name": "Pastel Aqua",
+   "dE_vs_current": 6.91,
+   "dE_vs_wheel": 8.15
+  },
+  {
+   "n": 24,
+   "XYZ": [
+    0.60218,
+    0.57933,
+    0.66156
+   ],
+   "Lab": [
+    80.7,
+    12.62,
+    -2.66
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.064,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.8519 0.7594 0.8039",
+   "hex": "#DEC1CE",
+   "name": "Lilac",
+   "dE_vs_current": 6.19,
+   "dE_vs_wheel": 5.36
+  },
+  {
+   "n": 25,
+   "XYZ": [
+    0.0345,
+    0.03139,
+    0.04458
+   ],
+   "Lab": [
+    20.59,
+    7.82,
+    -5.84
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.254,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.2175 0.1820 0.2252",
+   "hex": "#392E3A",
+   "name": "Smoked Grape",
+   "dE_vs_current": 3.89,
+   "dE_vs_wheel": 2.75
+  },
+  {
+   "n": 26,
+   "XYZ": [
+    0.07868,
+    0.05509,
+    0.08803
+   ],
+   "Lab": [
+    28.14,
+    27.66,
+    -10.37
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.201,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.3647 0.2026 0.3187",
+   "hex": "#643153",
+   "name": "Plum",
+   "dE_vs_current": 4.45,
+   "dE_vs_wheel": 4.02
+  },
+  {
+   "n": 27,
+   "XYZ": [
+    0.17031,
+    0.10795,
+    0.15215
+   ],
+   "Lab": [
+    39.23,
+    43.81,
+    -8.55
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.131,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.5496 0.2543 0.4148",
+   "hex": "#973B6B",
+   "name": "Amethyst",
+   "dE_vs_current": 4.33,
+   "dE_vs_wheel": 5.07
+  },
+  {
+   "n": 28,
+   "XYZ": [
+    0.33661,
+    0.25671,
+    0.27663
+   ],
+   "Lab": [
+    57.72,
+    35.98,
+    0.45
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.109,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.7280 0.4611 0.5442",
+   "hex": "#C5728B",
+   "name": "Cyclamen",
+   "dE_vs_current": 3.08,
+   "dE_vs_wheel": 4.85
+  },
+  {
+   "n": 29,
+   "XYZ": [
+    0.43248,
+    0.3466,
+    0.36056
+   ],
+   "Lab": [
+    65.48,
+    33.36,
+    2.13
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.088,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.8038 0.5475 0.6132",
+   "hex": "#D8889C",
+   "name": "Clover",
+   "dE_vs_current": 5.28,
+   "dE_vs_wheel": 4.23
+  },
+  {
+   "n": 30,
+   "XYZ": [
+    0.21912,
+    0.1237,
+    0.08932
+   ],
+   "Lab": [
+    41.8,
+    57.46,
+    12.76
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.11,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.6616 0.2162 0.3207",
+   "hex": "#B72A51",
+   "name": "Raspberry",
+   "dE_vs_current": 5.52,
+   "dE_vs_wheel": 2.06
+  },
+  {
+   "n": 31,
+   "XYZ": [
+    0.09453,
+    0.05742,
+    0.04175
+   ],
+   "Lab": [
+    28.75,
+    38.76,
+    9.72
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.196,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.4435 0.1672 0.2179",
+   "hex": "#7B2437",
+   "name": "Burgundy",
+   "dE_vs_current": 6.71,
+   "dE_vs_wheel": 2.27
+  },
+  {
+   "n": 32,
+   "XYZ": [
+    0.14902,
+    0.08422,
+    0.0411
+   ],
+   "Lab": [
+    34.85,
+    50.44,
+    20.58
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.163,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.5626 0.1749 0.2158",
+   "hex": "#9C2134",
+   "name": "Cherry",
+   "dE_vs_current": 7.71,
+   "dE_vs_wheel": 3.66
+  },
+  {
+   "n": 33,
+   "XYZ": [
+    0.31889,
+    0.178,
+    0.08017
+   ],
+   "Lab": [
+    49.25,
+    66.17,
+    28.69
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.109,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.7960 0.2506 0.3027",
+   "hex": "#DD2F49",
+   "name": "Coral Red",
+   "dE_vs_current": 7.19,
+   "dE_vs_wheel": 1.67
+  },
+  {
+   "n": 34,
+   "XYZ": [
+    0.21938,
+    0.14003,
+    0.09887
+   ],
+   "Lab": [
+    44.24,
+    47.06,
+    13.97
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.161,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.6475 0.2875 0.3350",
+   "hex": "#B24254",
+   "name": "Rose Madder",
+   "dE_vs_current": 5.44,
+   "dE_vs_wheel": 3.64
+  },
+  {
+   "n": 35,
+   "XYZ": [
+    0.44346,
+    0.2993,
+    0.30034
+   ],
+   "Lab": [
+    61.59,
+    53.35,
+    3.6
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.125,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.8576 0.4452 0.5662",
+   "hex": "#EB6A91",
+   "name": "Rose",
+   "dE_vs_current": 3.12,
+   "dE_vs_wheel": 4.52
+  },
+  {
+   "n": 36,
+   "XYZ": [
+    0.67788,
+    0.63907,
+    0.6437
+   ],
+   "Lab": [
+    83.92,
+    16.05,
+    4.43
+   ],
+   "shots": 1,
+   "shot_spread_dE": 0.0,
+   "texture": 0.062,
+   "srgb_in_gamut": true,
+   "p3_in_gamut": true,
+   "p3": "0.9241 0.7854 0.7927",
+   "hex": "#F3C7CA",
+   "name": "Pastel Rose",
+   "dE_vs_current": 7.26,
+   "dE_vs_wheel": 6.12
+  }
+ ]
+}

@@ -103,19 +103,6 @@ button {
   padding: 6px 16px;
 }
 
-.legend {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  padding: 0 16px;
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.legend span:last-child {
-  text-align: right;
-}
-
 .group-heading {
   padding: 22px 16px 8px;
   font-size: 13px;
@@ -133,7 +120,7 @@ button {
 
 .swatch {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   width: 100%;
   height: 33vh;
   height: 33svh;
@@ -158,26 +145,12 @@ button {
   color: var(--ink);
 }
 
-.half.wheel-half {
-  align-items: flex-end;
-  text-align: right;
-}
-
-.half.missing {
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background: repeating-linear-gradient(45deg, #eee 0 10px, #f8f8f8 10px 20px);
-  --ink: #777;
-}
-
 .swatch-name {
   font-size: 20px;
   font-weight: 500;
 }
 
-.swatch-meta,
-.swatch-hex {
+.swatch-meta {
   font-size: 13px;
   opacity: 0.8;
 }
@@ -211,18 +184,10 @@ button {
   inset: 0;
   z-index: 10;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   touch-action: none;
   -webkit-user-select: none;
   user-select: none;
-}
-
-.fullscreen.single {
-  grid-template-columns: 1fr;
-}
-
-.fullscreen.single #fs-right {
-  display: none;
 }
 
 .fullscreen[hidden] {
