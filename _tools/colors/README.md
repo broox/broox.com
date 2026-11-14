@@ -39,6 +39,30 @@ the leave-one-out error).
 - One extra frame of a blank matte white or grey board filling the frame (the flat-field),
   without moving the camera or light. Reshoot it if the setup changes.
 
+## Setup on a Mac
+
+RAW files are too big to upload to a chat, so run the tool on the computer that has them.
+In Terminal:
+
+```sh
+# Once: get the repo (skip if you already have a clone) and Python 3.10+.
+git clone https://github.com/broox/broox.com.git && cd broox.com
+python3 --version            # if missing or older than 3.10: brew install python
+
+# Once: create an isolated Python environment with the dependencies.
+cd _tools/colors
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+# Each new Terminal session: re-activate it.
+cd broox.com/_tools/colors && source .venv/bin/activate
+```
+
+Put the photos in a folder next to the tool, e.g. `_tools/colors/shoot-2026-11/` (photo
+files are git-ignored). If you'd rather someone else mark the swatch positions, run
+`preview` on each photo and share the small `.preview.jpg` files instead of the RAWs.
+
 ## Usage
 
 ```sh

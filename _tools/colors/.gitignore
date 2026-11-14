@@ -16,3 +16,4 @@
 *.preview.jpg
 *.annotated.jpg
 __pycache__/
+.venv/
