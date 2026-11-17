@@ -1,0 +1,30 @@
+.privacy-section {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.privacy-section h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.privacy-section h2 {
+  font-size: 1.4em;
+  margin: 25px 0 10px;
+  color: #555;
+}
+
+.privacy-section ul {
+  padding-left: 1.5em;
+  margin-bottom: 10px;
+}
+
+.privacy-section li {
+  margin-bottom: 8px;
+}
+
+.privacy-section .updated {
+  margin-top: 30px;
+  color: #777;
+  font-size: 0.9em;
+}
